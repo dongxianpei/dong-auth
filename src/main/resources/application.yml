@@ -1,0 +1,48 @@
+spring:
+  datasource:
+    druid:
+      default-auto-commit: false
+      web-stat-filter:
+        enabled: true
+      filter:
+        wall:
+          enabled: true
+      stat-view-servlet:
+        enabled: true
+  jpa:
+    show-sql: true
+
+  data:
+    redis:
+      repositories:
+        enabled: false
+#    elasticsearch:
+#      repositories:
+#        enabled: false
+#    mongodb:
+#      repositories:
+#        type: none
+
+springdoc:
+  title: 权限系统接口文档
+  version: v1
+  show-actuator: true
+  api-docs:
+    enabled: true
+
+logging:
+  level:
+    sql: debug
+    web: info
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: openapi,swaggerui
+
+server:
+  servlet:
+    context-path: /api/v1/auth
+
+

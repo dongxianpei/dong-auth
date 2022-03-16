@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: application-auth
+  cloud:
+    nacos:
+      server-addr: ${NACOS_ADDR:192.168.1.23:8848}
+      config:
+        name: ${NACOS_CONFIG_NAME:${spring.application.name}}
+        group: ${NACOS_GROUP:DEFAULT_GROUP}
+        enabled: true
+        namespace: ${NACOS_NAMESPACE:deeee21e-96a4-4fe3-af40-c66b9ef91a59}
+        file-extension: ${NACOS_FILE_EXTENSION:yml}
+      username: ${NACOS_USERNAME:nacos}
+      password: ${NACOS_PASSWORD:nacos}
+      discovery:
+        namespace: ${NACOS_NAMESPACE:deeee21e-96a4-4fe3-af40-c66b9ef91a59}
